@@ -35,9 +35,12 @@ src="https://www.facebook.com/tr?id=4109849605914163&ev=PageView&noscript=1"/></
   --cream:#F5F0E8;
   --offwhite:#FAF8F4;
   --carbon:#141414;
+  --teal:#417C88;
+  --teal-dk:#2f5f69;
+  --teal-lt:#9dd0d8;
   --charcoal:#2a2a2a;
-  --amber:#E8A020;
-  --amber-dk:#C4861A;
+  --amber:#417C88;
+  --amber-dk:#2f5f69;
   --stone:#8a8070;
   --border:#DDD8CE;
   --white:#fff;
@@ -99,7 +102,7 @@ body{
 }
 .nav-links a:hover{color:var(--amber);}
 .nav-cta{
-  background:var(--carbon)!important;color:var(--cream)!important;
+  background:var(--teal)!important;color:var(--white)!important;
   padding:10px 24px;letter-spacing:2px!important;
   transition:background .2s!important;
 }
@@ -175,7 +178,7 @@ body{
 }
 .btn-blk{
   display:block;text-align:center;
-  background:var(--carbon);color:var(--cream);
+  background:var(--teal);color:var(--white);
   padding:16px 28px;
   font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
   transition:background .2s,transform .15s;
@@ -184,12 +187,12 @@ body{
 .btn-ghost{
   display:block;text-align:center;
   background:transparent;color:var(--carbon);
-  border:1.5px solid var(--carbon);
+  border:1.5px solid var(--teal);
   padding:14px 28px;
   font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
   transition:all .2s;
 }
-.btn-ghost:hover{background:var(--carbon);color:var(--cream);}
+.btn-ghost:hover{background:var(--teal);color:var(--white);}
 .h-stats{
   display:flex;gap:28px;
   margin-top:48px;padding-top:32px;
@@ -208,9 +211,9 @@ body{
 
 /* ── MARQUEE STRIP ── */
 .marquee-wrap{
-  background:var(--carbon);
+  background:var(--teal);
   padding:14px 0;overflow:hidden;
-  border-top:1px solid #333;border-bottom:1px solid #333;
+  border-top:1px solid var(--teal-dk);border-bottom:1px solid var(--teal-dk);
 }
 .marquee-track{
   display:flex;gap:0;
@@ -332,7 +335,7 @@ body{
 .prop-badge{
   position:absolute;top:16px;left:16px;
   font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
-  background:var(--carbon);color:var(--cream);
+  background:var(--teal);color:var(--white);
   padding:4px 10px;
 }
 .prop.featured{grid-column:span 2;}
@@ -392,8 +395,8 @@ body{
   font-family:'Bebas Neue',sans-serif;
   font-size:18px;letter-spacing:1px;color:var(--carbon);
 }
-.lot-tile.cta{background:var(--carbon);}
-.lot-tile.cta .lot-type{color:rgba(232,160,32,.7);}
+.lot-tile.cta{background:var(--teal);}
+.lot-tile.cta .lot-type{color:rgba(65,124,136,.7);}
 .lot-tile.cta .lot-name{color:var(--cream);}
 .lot-tile.cta .lot-detail{color:rgba(245,240,232,.45);}
 .lot-tile.cta .lot-price{color:var(--amber);}
@@ -401,18 +404,18 @@ body{
 
 /* ── WHY BAJA: dark, full bleed text ── */
 .why{
-  background:var(--carbon);
+  background:var(--teal);
   padding:100px 0;
 }
-.why .section-kicker{color:var(--amber);}
+.why .section-kicker{color:var(--sand);}
 .why .section-title{color:var(--cream);margin-bottom:56px;}
 .reasons{
   display:grid;grid-template-columns:repeat(5,1fr);
-  gap:0;border:1px solid rgba(255,255,255,.06);
+  gap:0;border:1px solid rgba(255,255,255,.1);
 }
 .reason{
   padding:32px 24px;
-  border-right:1px solid rgba(255,255,255,.06);
+  border-right:1px solid rgba(255,255,255,.1);
   transition:background .25s;
 }
 .reason:last-child{border-right:none;}
@@ -427,10 +430,10 @@ body{
   font-size:14px;font-weight:700;font-style:italic;
   color:var(--cream);line-height:1.4;margin-bottom:12px;
 }
-.r-body{font-size:12px;color:rgba(245,240,232,.45);line-height:1.8;}
+.r-body{font-size:12px;color:rgba(245,240,232,.7);line-height:1.8;}
 
 /* ── KATRINA: dark, editorial ── */
-.katrina{background:var(--carbon);}
+.katrina{background:var(--teal);}
 .katrina-inner{
   display:grid;grid-template-columns:1fr 1fr;
   min-height:80vh;
@@ -439,7 +442,7 @@ body{
   display:grid;
   grid-template-columns:3fr 2fr;
   grid-template-rows:1fr 1fr;
-  gap:2px;background:var(--charcoal);
+  gap:2px;background:var(--teal-dk);
 }
 .k-gallery img{
   width:100%;height:100%;object-fit:cover;
@@ -454,11 +457,12 @@ body{
 .k-copy{
   padding:80px 64px;
   display:flex;flex-direction:column;justify-content:center;
+  background:var(--teal);
 }
 .k-copy .section-kicker{color:var(--amber);}
 .k-copy .section-title{color:var(--cream);}
 .k-copy .section-title em{color:rgba(245,240,232,.4);}
-.k-copy .prose{color:rgba(245,240,232,.5);max-width:360px;}
+.k-copy .prose{color:rgba(245,240,232,.75);max-width:360px;}
 .k-handles{
   display:flex;flex-wrap:wrap;gap:10px;
   margin-top:32px;
@@ -492,7 +496,7 @@ body{
 
 /* Form card */
 .form-card{
-  background:var(--carbon);
+  background:var(--teal);
   padding:48px;
 }
 .form-card h3{
@@ -534,7 +538,7 @@ body{
   font-size:18px;letter-spacing:3px;
   transition:background .2s,transform .15s;
 }
-.f-submit:hover{background:#f0aa28;transform:translateY(-1px);}
+.f-submit:hover{background:#4d8f9c;transform:translateY(-1px);}
 .f-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;}
 .f-note{font-size:11px;color:rgba(245,240,232,.3);text-align:center;margin-top:12px;line-height:1.6;}
 #success-msg{display:none;text-align:center;padding:40px 20px;}
@@ -546,8 +550,8 @@ body{
 
 /* ── FOOTER ── */
 .footer{
-  background:var(--carbon);
-  border-top:1px solid rgba(255,255,255,.06);
+  background:var(--teal-dk);
+  border-top:1px solid rgba(255,255,255,.1);
   padding:36px 48px;
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:16px;
@@ -640,7 +644,7 @@ body{
 <section class="hero">
   <div class="hero-img">
     <img src="./images/hero.jpg" alt="Todos Santos, Baja California Sur">
-    <div class="hero-img-tag">Todos Santos, BCS — since 2007</div>
+    <div class="hero-img-tag">Todos Santos, BCS — since 2006</div>
   </div>
   <div class="hero-copy">
     <p class="h-kicker">Real Estate · Baja Sur</p>
@@ -649,7 +653,7 @@ body{
       <em>Surf. Real Estate. Baja.</em>
     </div>
     <p class="h-tagline">
-      <strong>Agent. Surf shop owner. Local since 2007.</strong><br>
+      <strong>Agent. Surf shop owner. Almost 20 years local.</strong><br>
       He knows this coastline better than most people know their own neighborhood.
     </p>
     <div class="h-btns">
@@ -658,8 +662,8 @@ body{
     </div>
     <div class="h-stats">
       <div>
-        <div class="stat-n">2007</div>
-        <div class="stat-l">Local since</div>
+        <div class="stat-n">2006</div>
+        <div class="stat-l">Almost 20 yrs</div>
       </div>
       <div>
         <div class="stat-n">EN/ES</div>
@@ -704,8 +708,8 @@ body{
   </div>
   <div class="about-copy">
     <p class="section-kicker reveal">About Aaron</p>
-    <h2 class="section-title reveal">From Connecticut<br>to Cerritos.<br><em>Never looked back.</em></h2>
-    <p class="prose reveal">Aaron traded the Northeast for the Pacific coast in 2007 — and built a life most people only dream about. Full-time agent with Ricardo Amigo Real Estate, owner of La Katrina Surf + Supply, and one of the most connected people in Todos Santos.</p>
+    <h2 class="section-title reveal">From Connecticut<br>to Todos Santos.<br><em>Never looked back.</em></h2>
+    <p class="prose reveal">Aaron traded the Northeast for the Pacific coast in 2006 — and built a life most people only dream about. Full-time agent with Ricardo Amigo Real Estate, owner of La Katrina Surf + Supply, and one of the most connected people in Todos Santos.</p>
     <p class="prose reveal">Whether you're buying your first Baja home, investing in land, or looking for a turnkey retreat near the waves — Aaron brings real knowledge, zero fluff, and actual skin in the game.</p>
     <div class="deet-list reveal">
       <div class="deet">
