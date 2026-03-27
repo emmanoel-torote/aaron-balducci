@@ -75,7 +75,7 @@ body{
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;height:68px;
+  padding:0 48px;height:80px;
   mix-blend-mode:normal;
   transition:background .4s,backdrop-filter .4s;
 }
@@ -86,15 +86,12 @@ body{
 }
 .nav-logo{line-height:1;}
 .nav-logo img{
-  height:44px;width:auto;
-  /* Logo is white — invert to carbon on light nav */
+  height:56px;width:auto;
   filter:invert(1) brightness(0);
   transition:opacity .2s,filter .3s;
 }
 .nav-logo img:hover{opacity:.75;}
-/* Once nav is solid (scrolled), keep dark */
 .nav.solid .nav-logo img{filter:invert(1) brightness(0);}
-
 .nav-links{display:flex;align-items:center;gap:36px;}
 .nav-links a{
   font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
@@ -108,12 +105,12 @@ body{
 }
 .nav-cta:hover{background:var(--amber)!important;color:var(--carbon)!important;}
 
-/* ── HERO: full viewport, portrait left, copy right ── */
+/* ── HERO: full viewport, image left, logo+copy right ── */
 .hero{
   display:grid;
   grid-template-columns:58% 42%;
   min-height:100vh;
-  padding-top:68px;
+  padding-top:80px;
 }
 .hero-img{
   position:relative;overflow:hidden;
@@ -137,43 +134,42 @@ body{
 }
 .hero-copy{
   background:var(--cream);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:80px 64px 80px 60px;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;
+  padding:80px 56px;
   position:relative;
 }
-/* amber vertical rule */
 .hero-copy::before{
   content:'';
   position:absolute;left:0;top:15%;bottom:15%;
   width:3px;background:var(--amber);
 }
-.h-kicker{
-  font-size:10px;letter-spacing:5px;text-transform:uppercase;
-  color:var(--stone);margin-bottom:24px;
-  opacity:0;animation:fadeUp .6s .4s both;
+/* Logo hero */
+.h-logo{
+  width:min(280px,80%);
+  margin-bottom:32px;
+  opacity:0;animation:fadeUp .7s .3s both;
+  /* logo is white — invert to carbon on cream bg */
+  filter:invert(1) brightness(0);
 }
-.h-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(64px,7vw,96px);
-  line-height:.95;letter-spacing:2px;
-  color:var(--carbon);
-  opacity:0;animation:fadeUp .7s .55s both;
-}
-.h-name em{
+.h-tagline-main{
   font-family:'Caveat',cursive;
-  font-style:normal;font-size:.38em;
-  letter-spacing:2px;color:var(--amber);
-  display:block;margin-top:6px;line-height:1.4;
+  font-size:clamp(26px,3vw,34px);
   font-weight:700;
+  color:var(--amber);
+  letter-spacing:1px;
+  margin-bottom:12px;
+  opacity:0;animation:fadeUp .6s .55s both;
 }
-.h-tagline{
-  font-size:15px;line-height:1.85;color:var(--stone);
-  margin:28px 0 40px;max-width:320px;
+.h-sub{
+  font-size:14px;line-height:1.85;color:var(--stone);
+  max-width:300px;margin:0 auto 36px;
   opacity:0;animation:fadeUp .6s .7s both;
 }
-.h-tagline strong{color:var(--carbon);font-weight:500;}
+.h-sub strong{color:var(--carbon);font-weight:500;}
 .h-btns{
-  display:flex;flex-direction:column;gap:12px;max-width:280px;
+  display:flex;flex-direction:column;gap:12px;width:100%;max-width:280px;
   opacity:0;animation:fadeUp .6s .85s both;
 }
 .btn-blk{
@@ -194,14 +190,15 @@ body{
 }
 .btn-ghost:hover{background:var(--teal);color:var(--white);}
 .h-stats{
-  display:flex;gap:28px;
-  margin-top:48px;padding-top:32px;
+  display:flex;gap:28px;justify-content:center;
+  margin-top:40px;padding-top:28px;
   border-top:1px solid var(--border);
+  width:100%;
   opacity:0;animation:fadeUp .6s 1s both;
 }
 .stat-n{
   font-family:'Bebas Neue',sans-serif;
-  font-size:28px;letter-spacing:1px;color:var(--carbon);
+  font-size:26px;letter-spacing:1px;color:var(--carbon);
 }
 .stat-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-top:2px;}
 @keyframes fadeUp{
@@ -591,8 +588,10 @@ body{
   .nav-links{gap:20px;}
   .hero{grid-template-columns:1fr;}
   .hero-img{height:65vw;min-height:340px;}
-  .hero-copy{padding:56px 32px;}
+  .hero-copy{padding:48px 28px;align-items:center;text-align:center;}
   .hero-copy::before{display:none;}
+  .h-logo{width:min(240px,70%);}
+  .h-sub{max-width:100%;}
   .about{grid-template-columns:1fr;}
   .about-img{height:60vw;}
   .about-copy{padding:56px 32px;}
@@ -646,12 +645,9 @@ body{
     <div class="hero-img-tag">Todos Santos, BCS — since 2006</div>
   </div>
   <div class="hero-copy">
-    <p class="h-kicker">Real Estate · Baja Sur</p>
-    <div class="h-name">
-      Aaron<br>Balducci
-      <em>Surf. Real Estate. Baja.</em>
-    </div>
-    <p class="h-tagline">
+    <img src="./images/logo.png" alt="Aaron Balducci" class="h-logo">
+    <p class="h-tagline-main">Surf. Real Estate. Baja.</p>
+    <p class="h-sub">
       <strong>Agent. Surf shop owner. Almost 20 years local.</strong><br>
       He knows this coastline better than most people know their own neighborhood.
     </p>
